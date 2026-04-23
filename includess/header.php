@@ -38,11 +38,11 @@
                     <i class="fa-solid fa-chart-pie nav-icon"></i>
                     Dashboard
                 </a>
-                <a href="markets.php" class="nav-item">
+                <a href="teachers.php" class="nav-item">
                     <i class="fa-solid fa-chalkboard-user nav-icon"></i>
                     Teachers
                 </a>
-                <a href="wallet.php" class="nav-item">
+                <a href="students.php" class="nav-item">
                     <i class="fa-solid fa-user-graduate nav-icon"></i>
                     Students
                 </a>
