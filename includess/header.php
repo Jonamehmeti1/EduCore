@@ -3,7 +3,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$role = $_SESSION['role'] ?? 'student';
 $currentPage = basename($_SERVER['PHP_SELF']);
 
 function active($page, $currentPage) {
@@ -33,9 +32,7 @@ function active($page, $currentPage) {
     <link rel="stylesheet" href="../interactivity/css/style.css">
     <link rel="stylesheet" href="../interactivity/css/dashboard.css">
 </head>
-
 <body>
-
 <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
     <div class="hamburger">
         <span></span>
@@ -52,69 +49,34 @@ function active($page, $currentPage) {
         <div class="logo">
             <span class="logo-text">EduCare</span>
         </div>
-
         <nav class="nav-section">
             <div class="nav-label">Main Menu</div>
 
             <a href="home.php" class="nav-item <?= active('home.php', $currentPage) ?>">
-                <i class="fa-solid fa-chart-pie nav-icon"></i>
-                Dashboard
+                <i class="fa-solid fa-house nav-icon"></i>
+                Home
             </a>
 
-            <?php if ($role === 'admin'): ?>
+            <a href="lessons.php" class="nav-item <?= active('lessons.php', $currentPage) ?>">
+                <i class="fa-solid fa-book-open nav-icon"></i>
+                Lessons
+            </a>
 
-                <a href="teachers.php" class="nav-item <?= active('teachers.php', $currentPage) ?>">
-                    <i class="fa-solid fa-chalkboard-user nav-icon"></i>
-                    Teachers
-                </a>
+            <a href="grades.php" class="nav-item <?= active('grades.php', $currentPage) ?>">
+                <i class="fa-solid fa-ranking-star nav-icon"></i>
+                Grades
+            </a>
 
-                <a href="students.php" class="nav-item <?= active('students.php', $currentPage) ?>">
-                    <i class="fa-solid fa-user-graduate nav-icon"></i>
-                    Students
-                </a>
+            <a href="activity.php" class="nav-item <?= active('activity.php', $currentPage) ?>">
+                <i class="fa-solid fa-chart-line nav-icon"></i>
+                Activity
+            </a>
 
-            <?php elseif ($role === 'teacher'): ?>
-
-                <a href="attendance.php" class="nav-item <?= active('attendance.php', $currentPage) ?>">
-                    <i class="fa-solid fa-clipboard-user nav-icon"></i>
-                    Vijueshmëria
-                </a>
-
-                <a href="lessons.php" class="nav-item <?= active('lessons.php', $currentPage) ?>">
-                    <i class="fa-solid fa-book-open nav-icon"></i>
-                    Lessons
-                </a>
-
-                <a href="grades.php" class="nav-item <?= active('grades.php', $currentPage) ?>">
-                    <i class="fa-solid fa-ranking-star nav-icon"></i>
-                    Grades
-                </a>
-
-                <a href="schedule.php" class="nav-item <?= active('schedule.php', $currentPage) ?>">
-                    <i class="fa-solid fa-calendar-days nav-icon"></i>
-                    Orari
-                </a>
-
-            <?php elseif ($role === 'student'): ?>
-
-                <a href="lessons.php" class="nav-item <?= active('lessons.php', $currentPage) ?>">
-                    <i class="fa-solid fa-book-open nav-icon"></i>
-                    Lessons
-                </a>
-
-                <a href="grades.php" class="nav-item <?= active('grades.php', $currentPage) ?>">
-                    <i class="fa-solid fa-ranking-star nav-icon"></i>
-                    Grades
-                </a>
-
-                <a href="schedule.php" class="nav-item <?= active('schedule.php', $currentPage) ?>">
-                    <i class="fa-solid fa-calendar-days nav-icon"></i>
-                    Orari
-                </a>
-
-            <?php endif; ?>
+            <a href="schedule.php" class="nav-item <?= active('schedule.php', $currentPage) ?>">
+                <i class="fa-solid fa-calendar-days nav-icon"></i>
+                Orari
+            </a>
         </nav>
-
         <nav class="nav-section">
             <div class="nav-label">Account</div>
 
@@ -123,7 +85,6 @@ function active($page, $currentPage) {
                 Settings
             </a>
         </nav>
-
         <div class="sidebar-footer">
             <div class="theme-toggle">
                 <div class="theme-toggle-label">
