@@ -28,13 +28,12 @@
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <div class="dashboard">
         <aside class="sidebar" id="sidebar">
-            <div class="logo">
-                <div class="logo-icon">EC</div>
-                <span class="logo-text">EduCare</span>
-            </div>
+          <div class="logo">
+            <span class="logo-text">EduCare</span>
+          </div>
             <nav class="nav-section">
                 <div class="nav-label">Main Menu</div>
-                <a href="home.php" class="nav-item active">
+                <a href="home.php" class="nav-item ">
                     <i class="fa-solid fa-chart-pie nav-icon"></i>
                     Dashboard
                 </a>
