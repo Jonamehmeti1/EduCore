@@ -1,4 +1,3 @@
-/* DASHBOARD PAGE LAYOUT */
 .dashboard-page {
     width: 100%;
 }
@@ -9,7 +8,6 @@
     margin-bottom: 28px;
 }
 
-/* ADMIN DASHBOARD GRID */
 .dashboard-admin-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -18,7 +16,6 @@
     max-width: 1050px;
 }
 
-/* GENERAL CARD */
 .admin-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -31,7 +28,6 @@
     margin-bottom: 18px;
 }
 
-/* TEACHER OF THE MONTH */
 .teacher-month-card-admin {
     max-width: 560px;
     display: flex;
@@ -79,7 +75,6 @@
     font-size: 14px;
 }
 
-/* TABLE */
 .students-table {
     width: 100%;
     border-collapse: collapse;
@@ -107,7 +102,7 @@
     font-weight: 800;
 }
 
-/* STATUS */
+
 .status {
     padding: 7px 12px;
     border-radius: 999px;
@@ -120,7 +115,6 @@
     color: #7fbd7f;
 }
 
-/* CLASSES */
 .class-summary-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -166,4 +160,67 @@
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+.teacher-dashboard-grid {
+    display: grid;
+    gap: 28px;
+    max-width: 1000px;
+}
+
+.attendance-summary {
+    display: flex;
+    gap: 24px;
+}
+
+.attendance-summary div {
+    flex: 1;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.attendance-summary h3 {
+    font-size: 34px;
+    color: var(--accent-copper);
+}
+
+.attendance-summary span {
+    color: var(--text-secondary);
+}
+
+.recent-lessons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.recent-lesson-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recent-lesson-item h3 {
+    font-size: 17px;
+}
+
+.recent-lesson-item p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.recent-lesson-item a {
+    padding: 9px 14px;
+    border-radius: 10px;
+    background: var(--accent-gradient);
+    color: #1c1c1e;
+    text-decoration: none;
+    font-weight: 800;
 }
