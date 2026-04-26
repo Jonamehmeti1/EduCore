@@ -54,7 +54,6 @@ body {
     overflow-x: hidden;
 }
 
-/* SIDEBAR */
 .sidebar {
     background-color: var(--bg-secondary);
     padding: 32px 24px;
@@ -169,20 +168,17 @@ body {
     font-size: 15px;
 }
 
-/* MOBILE */
 .mobile-menu-toggle,
 .sidebar-overlay {
     display: none;
 }
 
-/* GENERAL */
 .page-title {
     font-size: 34px;
     font-weight: 800;
     margin-bottom: 28px;
 }
 
-/* ADMIN CARDS */
 .activity-row {
     display: grid;
     grid-template-columns: repeat(3, 260px);
@@ -231,7 +227,6 @@ body {
     color: var(--text-secondary);
 }
 
-/* TABLES */
 .top-students-card,
 .student-table-card,
 .class-students-card {
@@ -278,7 +273,6 @@ body {
     font-weight: 700;
 }
 
-/* TEACHER OF MONTH */
 .teacher-month-wrapper {
     margin-top: 35px;
     display: flex;
@@ -375,7 +369,6 @@ body {
     cursor: pointer;
 }
 
-/* TEACHER CLASS */
 .teacher-class-card {
     width: 100%;
     max-width: 920px;
@@ -413,7 +406,6 @@ body {
     color: #1c1c1e;
 }
 
-/* BEST STUDENT */
 .best-student-wrapper {
     width: 100%;
     max-width: 920px;
@@ -473,7 +465,6 @@ body {
     color: #d4945a;
 }
 
-/* TEACHER STUDENT CARDS */
 .students-card-grid {
     display: grid;
     grid-template-columns: repeat(3, 260px);
@@ -525,7 +516,6 @@ body {
     color: #d98787;
 }
 
-/* STUDENT SUBJECTS */
 .subjects-carousel {
     width: 100%;
     max-width: calc(100vw - 340px);
@@ -613,7 +603,6 @@ body {
     opacity: 0.9;
 }
 
-/* RESPONSIVE */
 @media (max-width: 1100px) {
     .activity-row,
     .students-card-grid {
