@@ -12,6 +12,7 @@
             themeSwitch.addEventListener('click', function() {
                 const currentTheme = html.getAttribute('data-theme');
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
                 html.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
             });
@@ -28,6 +29,7 @@
                 mobileMenuToggle.classList.toggle('active');
                 sidebar.classList.toggle('active');
                 sidebarOverlay.classList.toggle('active');
+
                 document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
             }
         }
