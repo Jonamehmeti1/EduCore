@@ -1,49 +1,169 @@
-.dashboard {
+/* DASHBOARD PAGE LAYOUT */
+.dashboard-page {
+    width: 100%;
+}
+
+.dashboard-page .page-title {
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 28px;
+}
+
+/* ADMIN DASHBOARD GRID */
+.dashboard-admin-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    width: 100%;
+    max-width: 1050px;
+}
+
+/* GENERAL CARD */
+.admin-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.admin-card h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+/* TEACHER OF THE MONTH */
+.teacher-month-card-admin {
+    max-width: 560px;
     display: flex;
-    min-height: 100vh;
+    align-items: center;
+    gap: 22px;
 }
 
-.main-content {
-    flex: 1;
-    padding: 32px;
-    margin-left: 280px;
-    min-height: 100vh;
+.teacher-avatar {
+    width: 72px;
+    height: 72px;
+    background: var(--accent-gradient);
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #1c1c1e;
+    font-size: 22px;
+    font-weight: 900;
+    flex-shrink: 0;
 }
 
-.mobile-menu-toggle {
-    display: none;
+.teacher-month-content h2 {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
 }
 
-.sidebar-overlay {
-    display: none;
+.teacher-month-content h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 2px;
 }
 
-@media (max-width: 1024px) {
-    .main-content {
-        margin-left: 0;
-        padding: 24px;
+.teacher-month-content p {
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.teacher-stats {
+    display: flex;
+    gap: 18px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* TABLE */
+.students-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.students-table th {
+    text-align: left;
+    padding: 12px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.students-table td {
+    padding: 14px 12px;
+    border-top: 1px solid var(--border);
+    font-size: 15px;
+}
+
+.students-table tr:hover {
+    background: var(--bg-card-hover);
+}
+
+.students-table td:first-child {
+    color: var(--accent-copper);
+    font-weight: 800;
+}
+
+/* STATUS */
+.status {
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.status.present {
+    background: rgba(107, 142, 107, 0.2);
+    color: #7fbd7f;
+}
+
+/* CLASSES */
+.class-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.class-summary-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.class-summary-card h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.class-summary-card p {
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.class-summary-card span {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .class-summary-grid {
+        grid-template-columns: 1fr;
     }
 
-    .mobile-menu-toggle {
-        display: flex;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1001;
-    }
-
-    .sidebar-overlay.active {
-        display: block;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.45);
-        z-index: 998;
+    .teacher-month-card-admin {
+        max-width: 100%;
     }
 }
 
 @media (max-width: 640px) {
-    .main-content {
-        padding: 20px;
-        padding-top: 80px;
+    .teacher-month-card-admin {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
