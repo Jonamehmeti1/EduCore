@@ -259,3 +259,119 @@ body {
         width: 100%;
     }
 }
+
+.teacher-month-wrapper {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teacher-month-card {
+    width: 520px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.teacher-avatar {
+    width: 70px;
+    height: 70px;
+    background: var(--accent-gradient);
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 900;
+    font-size: 20px;
+    color: #1c1c1e;
+}
+
+.teacher-info h2 {
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+.teacher-info h3 {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.teacher-info p {
+    color: var(--text-secondary);
+}
+
+.teacher-stats {
+    display: flex;
+    gap: 18px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.change-teacher-btn {
+    margin-top: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent-gradient);
+    color: #1c1c1e;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.teacher-select-form {
+    display: none;
+    margin-top: 16px;
+    width: 520px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    gap: 12px;
+}
+
+.teacher-select-form.show {
+    display: grid;
+}
+
+.teacher-select-form label {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.teacher-select-form select {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.teacher-select-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent-gradient);
+    color: #1c1c1e;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    .teacher-month-card,
+    .teacher-select-form {
+        width: 100%;
+    }
+
+    .teacher-month-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
