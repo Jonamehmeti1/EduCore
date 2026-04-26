@@ -207,14 +207,117 @@ $role = $_SESSION['role'] ?? 'student';
 <?php elseif ($role === 'student'): ?>
 
 <div class="dashboard-page">
+
     <h1 class="page-title">Student Dashboard</h1>
 
-    <div class="admin-card">
-        <h2>Welcome Student</h2>
-        <p>Here you can view your lessons, grades, schedule, and attendance.</p>
-    </div>
-</div>
+    <?php
+    $studentInfo = [
+        "name" => "Jona Mehmeti",
+        "class" => "10A",
+        "average" => 4.7,
+        "attendance" => 91
+    ];
 
+    $recentGrades = [
+        ["subject" => "Matematikë", "grade" => 5, "date" => "Today"],
+        ["subject" => "TIK", "grade" => 5, "date" => "Yesterday"],
+        ["subject" => "Fizikë", "grade" => 4, "date" => "2 days ago"]
+    ];
+
+    $todaySchedule = [
+        ["time" => "09:00", "subject" => "Matematikë", "room" => "Room 201"],
+        ["time" => "10:30", "subject" => "TIK", "room" => "Lab 2"],
+        ["time" => "12:00", "subject" => "Anglisht", "room" => "Room 105"]
+    ];
+
+    $notifications = [
+        "New lesson uploaded in Matematikë",
+        "Homework deadline tomorrow",
+        "Grade updated in TIK"
+    ];
+    ?>
+
+    <div class="student-dashboard-grid">
+
+        <div class="admin-card student-profile-card">
+            <div class="student-avatar-big">
+                <?= strtoupper(substr($studentInfo["name"], 0, 1)) ?>
+            </div>
+
+            <div>
+                <h2><?= htmlspecialchars($studentInfo["name"]) ?></h2>
+                <p>Class <?= htmlspecialchars($studentInfo["class"]) ?></p>
+
+                <div class="student-summary-row">
+                    <span>Average: <?= $studentInfo["average"] ?></span>
+                    <span>Attendance: <?= $studentInfo["attendance"] ?>%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-card">
+            <h2>Recent Grades</h2>
+
+            <table class="students-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($recentGrades as $grade): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($grade["subject"]) ?></td>
+                            <td><?= htmlspecialchars($grade["grade"]) ?></td>
+                            <td><?= htmlspecialchars($grade["date"]) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="admin-card">
+            <h2>Today’s Schedule</h2>
+
+            <table class="students-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Subject</th>
+                        <th>Room</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($todaySchedule as $item): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($item["time"]) ?></td>
+                            <td><?= htmlspecialchars($item["subject"]) ?></td>
+                            <td><?= htmlspecialchars($item["room"]) ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="admin-card">
+            <h2>Notifications</h2>
+
+            <div class="notifications-list">
+                <?php foreach ($notifications as $note): ?>
+                    <div class="notification-item">
+                        <?= htmlspecialchars($note) ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 <?php else: ?>
 
 <h1 class="page-title">No Access</h1>
