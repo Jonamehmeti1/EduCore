@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../includess/header.php';
 
-$_SESSION['role'] = 'student';
+$_SESSION['role'] = 'admin';
 
 $role = $_SESSION['role'] ?? 'student';
 ?>
