@@ -2,7 +2,7 @@
 
 <?php
 // Ndërroje për testim: admin ose teacher
-$role = "admin";
+$role = "teacher";
 // $role = "admin";
 
 $classes = [
@@ -76,7 +76,70 @@ function calculateAverage($students) {
         </div>
     <?php endforeach; ?>
 
+<?php elseif ($role == "teacher"): ?>
 
+    <h1 class="grades-title">Grades - Teacher</h1>
+
+    <div class="cards">
+        <?php foreach ($classes as $className => $students): ?>
+            <div class="class-card">
+                <h2>Class <?= $className ?></h2>
+                <p>Manage student grades</p>
+
+                <button class="learn-btn" onclick="showTeacherClass('<?= $className ?>')">
+                    Grade Students
+                </button>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <?php foreach ($classes as $className => $students): ?>
+        <div class="details-card" id="teacher<?= $className ?>">
+            <h2>Class <?= $className ?> - Grade Students</h2>
+
+            <table>
+                <tr>
+                    <th>Student</th>
+                    <th>Lënda</th>
+                    <th>Nota</th>
+                    <th>Action</th>
+                </tr>
+
+                <?php foreach ($students as $index => $student): ?>
+                    <?php $inputId = $className . $index; ?>
+
+                    <tr>
+                        <td><?= $student["student"] ?></td>
+                        <td><?= $student["subject"] ?></td>
+                        <td>
+                            <input
+                                type="number"
+                                min="5"
+                                max="10"
+                                value="<?= $student["grade"] ?>"
+                                id="grade<?= $inputId ?>"
+                                class="grade-input"
+                                disabled
+                            >
+                        </td>
+                        <td>
+                            <button class="edit-btn" onclick="editGrade('<?= $inputId ?>')">
+                                Edit
+                            </button>
+
+                            <button class="save-btn" onclick="saveGrade('<?= $inputId ?>')">
+                                Save
+                            </button>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
+    <?php endforeach; ?>
+
+<?php endif; ?>
+
+</div>
 
 <script>
 function hideAllTables() {
