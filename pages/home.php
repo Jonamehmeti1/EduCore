@@ -8,7 +8,6 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     exit();
 }
 
-/* OOP Classes */
 require_once __DIR__ . '/../classes/Student.php';
 require_once __DIR__ . '/../classes/Teacher.php';
 
@@ -288,43 +287,34 @@ include __DIR__ . '/../includess/header.php';
         ["subject" => "TIK", "grade" => 5, "date" => "Yesterday"],
         ["subject" => "Fizikë", "grade" => 4, "date" => "2 days ago"]
     ];
-
     $todaySchedule = [
         ["time" => "09:00", "subject" => "Matematikë", "room" => "Room 201"],
         ["time" => "10:30", "subject" => "TIK", "room" => "Lab 2"],
         ["time" => "12:00", "subject" => "Anglisht", "room" => "Room 105"]
     ];
-
     $notifications = [
         "New lesson uploaded in Matematikë",
         "Homework deadline tomorrow",
         "Grade updated in TIK"
     ];
     ?>
-
     <div class="student-dashboard-grid">
-
         <div class="admin-card student-profile-card">
             <div class="student-avatar-big">
                 <?= strtoupper(substr($studentInfo["name"], 0, 1)) ?>
             </div>
-
             <div>
                 <h2><?= htmlspecialchars($studentInfo["name"]) ?></h2>
                 <p>Class <?= htmlspecialchars($studentInfo["class"]) ?></p>
-
                 <div class="student-summary-row">
                     <span>Average: <?= htmlspecialchars($studentInfo["average"]) ?></span>
                     <span>Attendance: <?= htmlspecialchars($studentInfo["attendance"]) ?>%</span>
                 </div>
-
                 <small><?= htmlspecialchars($mainStudent->getStudentInfo()) ?></small>
             </div>
         </div>
-
         <div class="admin-card">
             <h2>Recent Grades</h2>
-
             <table class="students-table">
                 <thead>
                     <tr>
@@ -333,7 +323,6 @@ include __DIR__ . '/../includess/header.php';
                         <th>Date</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <?php foreach ($recentGrades as $grade): ?>
                         <tr>
@@ -345,10 +334,8 @@ include __DIR__ . '/../includess/header.php';
                 </tbody>
             </table>
         </div>
-
         <div class="admin-card">
             <h2>Today’s Schedule</h2>
-
             <table class="students-table">
                 <thead>
                     <tr>
@@ -357,7 +344,6 @@ include __DIR__ . '/../includess/header.php';
                         <th>Room</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <?php foreach ($todaySchedule as $item): ?>
                         <tr>
@@ -369,10 +355,8 @@ include __DIR__ . '/../includess/header.php';
                 </tbody>
             </table>
         </div>
-
         <div class="admin-card">
             <h2>Notifications</h2>
-
             <div class="notifications-list">
                 <?php foreach ($notifications as $note): ?>
                     <div class="notification-item">
@@ -381,15 +365,9 @@ include __DIR__ . '/../includess/header.php';
                 <?php endforeach; ?>
             </div>
         </div>
-
-    </div>
-
+  </div>
 </div>
-
 <?php else: ?>
-
 <h1 class="page-title">No Access</h1>
-
 <?php endif; ?>
-
 <?php include __DIR__ . '/../includess/footer.php'; ?>

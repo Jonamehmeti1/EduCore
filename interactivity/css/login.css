@@ -3,24 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #0f0f0f; /* Ngjyra e sfondit të dashboard-it */
+    background-color: #0f0f0f;
     color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
 .auth-wrapper {
     width: 100%;
     padding: 20px;
 }
-
 .auth-container {
-    background-color: #1a1a1a; /* Ngjyra e kartave të tua */
+    background-color: #1a1a1a; 
     max-width: 420px;
     margin: 0 auto;
     padding: 40px;
@@ -28,32 +25,26 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     border: 1px solid #2d2d2d;
 }
-
 .auth-header {
     text-align: center;
     margin-bottom: 30px;
 }
-
 .auth-header h1 {
     font-size: 28px;
     font-weight: 600;
 }
-
 .auth-header h1 span {
-    color: #d69e66; /* Portokallia gold nga "Open Lesson" */
+    color: #d69e66; 
 }
-
 .auth-header p {
     color: #888;
     font-size: 14px;
     margin-top: 5px;
 }
-
 .input-group {
     margin-bottom: 15px;
     text-align: left;
 }
-
 .input-group label {
     display: block;
     font-size: 13px;
@@ -61,7 +52,6 @@ body {
     margin-bottom: 5px;
     margin-left: 5px;
 }
-
 .input-group input, 
 .input-group select {
     width: 100%;
@@ -74,22 +64,19 @@ body {
     outline: none;
     transition: all 0.3s ease;
 }
-
 .input-group input:focus, 
 .input-group select:focus {
     border-color: #d69e66;
     background-color: #2d2d2d;
 }
-
 .auth-actions {
     margin-top: 25px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 .btn-primary {
-    background-color: #d69e66; /* Ngjyra e butonit Open Lesson */
+    background-color: #d69e66; 
     color: #1a1a1a;
     border: none;
     padding: 14px;
@@ -98,12 +85,10 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease;
 }
-
 .btn-primary:hover {
     transform: translateY(-2px);
     opacity: 0.9;
 }
-
 .btn-secondary {
     background-color: transparent;
     color: #d69e66;
@@ -114,11 +99,9 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .btn-secondary:hover {
     background-color: rgba(214, 158, 102, 0.1);
 }
-
 .alert {
     padding: 12px;
     border-radius: 8px;
@@ -126,13 +109,11 @@ body {
     margin-bottom: 20px;
     text-align: center;
 }
-
 .alert-danger {
     background-color: rgba(255, 68, 68, 0.1);
     color: #ff4444;
     border: 1px solid rgba(255, 68, 68, 0.2);
 }
-
 .alert-success {
     background-color: rgba(0, 200, 81, 0.1);
     color: #00c851;

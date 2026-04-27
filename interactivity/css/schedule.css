@@ -5,14 +5,12 @@
     color: #ffffff;
     font-family: 'Segoe UI', sans-serif;
 }
-
 .schedule-title {
     text-align: center;
     font-size: 42px;
     font-weight: 700;
     margin-bottom: 35px;
 }
-
 .admin-info-card,
 .teacher-info-card {
     max-width: 800px;
@@ -23,19 +21,16 @@
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.45);
 }
-
 .admin-info-card h2,
 .teacher-info-card h2 {
     font-size: 28px;
     margin-bottom: 8px;
 }
-
 .admin-info-card p,
 .teacher-info-card p {
     color: #9ca3af;
     font-size: 15px;
 }
-
 .schedule-table-card {
     background: #1e1e1e;
     border-radius: 18px;
@@ -43,22 +38,18 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     overflow-x: auto;
 }
-
 .teacher-schedule-card {
     max-width: 950px;
     margin: 0 auto;
 }
-
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
     min-width: 1000px;
 }
-
 .teacher-schedule-table {
     min-width: 700px;
 }
-
 .schedule-table th {
     background: #fe8e26;
     color: white;
@@ -66,7 +57,6 @@
     font-size: 15px;
     text-align: center;
 }
-
 .schedule-table td {
     padding: 14px;
     border-bottom: 1px solid #2d2d2d;
@@ -74,24 +64,20 @@
     text-align: center;
     vertical-align: top;
 }
-
 .schedule-table tr:hover {
     background: #242424;
 }
-
 .time-cell {
     font-weight: bold;
     color: #facc15;
     white-space: nowrap;
     background: #181818;
 }
-
 .schedule-cell {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-
 .schedule-input {
     width: 100%;
     padding: 9px 10px;
@@ -102,15 +88,12 @@
     outline: none;
     font-size: 14px;
 }
-
 .schedule-input::placeholder {
     color: #9ca3af;
 }
-
 .schedule-input:focus {
     border-color: #fe8e26;
 }
-
 .save-schedule-btn {
     background: linear-gradient(135deg, #22c55e, #16a34a);
     color: white;
@@ -121,28 +104,23 @@
     font-weight: 600;
     transition: 0.3s;
 }
-
 .save-schedule-btn:hover {
     transform: scale(1.05);
     opacity: 0.9;
 }
-
 .saved-message {
     min-height: 18px;
     font-size: 13px;
     font-weight: 600;
     margin: 0;
 }
-
 .teacher-schedule-table td:nth-child(3) {
     font-weight: 600;
 }
-
 .teacher-schedule-table td:nth-child(4) {
     color: #22c55e;
     font-weight: bold;
 }
-
 .student-lecture {
     background: #2a2a2a;
     border-left: 4px solid #fe8e26;
@@ -151,15 +129,12 @@
     margin-bottom: 10px;
     text-align: left;
 }
-
 .student-lecture strong {
     color: #facc15;
 }
-
 .student-lecture span {
     color: #9ca3af;
 }
-
 .no-lecture {
     color: #9ca3af;
     font-style: italic;

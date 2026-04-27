@@ -1,5 +1,5 @@
 <?php
 session_start();
-session_destroy(); // Fshin të gjitha të dhënat e kyçjes
+session_destroy(); 
 header("Location: login.php");
 exit();

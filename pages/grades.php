@@ -193,13 +193,11 @@ function hideAllTables() {
     document.querySelectorAll(".details-card").forEach(c => c.style.display = "none");
 }
 
-/* ADMIN */
 function showAdminClass(className) {
     hideAllTables();
     document.getElementById("admin" + className).style.display = "block";
 }
 
-/* TEACHER */
 function showTeacherClass(className) {
     hideAllTables();
     document.getElementById("teacher" + className).style.display = "block";
@@ -222,8 +220,6 @@ function saveGrade(id) {
     input.disabled = true;
     alert("Saved!");
 }
-
-/* STUDENT */
 function rejectGrade(index) {
     let status = document.getElementById("status" + index);
     status.innerText = "Rejected";

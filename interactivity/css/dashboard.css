@@ -1,13 +1,11 @@
 .dashboard-page {
     width: 100%;
 }
-
 .dashboard-page .page-title {
     font-size: 34px;
     font-weight: 800;
     margin-bottom: 28px;
 }
-
 .dashboard-admin-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -15,163 +13,134 @@
     width: 100%;
     max-width: 1050px;
 }
-
 .admin-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 24px;
 }
-
 .admin-card h2 {
     font-size: 22px;
     margin-bottom: 18px;
 }
-
 .teacher-month-card-admin {
     max-width: 560px;
     display: flex;
     align-items: center;
     gap: 22px;
 }
-
 .teacher-avatar {
     width: 72px;
     height: 72px;
     background: var(--accent-gradient);
     border-radius: 18px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #1c1c1e;
     font-size: 22px;
     font-weight: 900;
     flex-shrink: 0;
 }
-
 .teacher-month-content h2 {
     font-size: 15px;
     color: var(--text-muted);
     margin-bottom: 4px;
 }
-
 .teacher-month-content h3 {
     font-size: 24px;
     font-weight: 800;
     margin-bottom: 2px;
 }
-
 .teacher-month-content p {
     color: var(--text-secondary);
     margin-bottom: 8px;
 }
-
 .teacher-stats {
     display: flex;
     gap: 18px;
     color: var(--text-secondary);
     font-size: 14px;
 }
-
 .students-table {
     width: 100%;
     border-collapse: collapse;
 }
-
 .students-table th {
     text-align: left;
     padding: 12px;
     color: var(--text-muted);
     font-size: 14px;
 }
-
 .students-table td {
     padding: 14px 12px;
     border-top: 1px solid var(--border);
     font-size: 15px;
 }
-
 .students-table tr:hover {
     background: var(--bg-card-hover);
 }
-
 .students-table td:first-child {
     color: var(--accent-copper);
     font-weight: 800;
 }
-
-
 .status {
     padding: 7px 12px;
     border-radius: 999px;
     font-size: 13px;
     font-weight: 700;
 }
-
 .status.present {
     background: rgba(107, 142, 107, 0.2);
     color: #7fbd7f;
 }
-
 .class-summary-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
 }
-
 .class-summary-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 20px;
 }
-
 .class-summary-card h3 {
     font-size: 24px;
     margin-bottom: 8px;
     color: var(--text-primary);
 }
-
 .class-summary-card p {
     font-weight: 800;
     margin-bottom: 4px;
 }
-
 .class-summary-card span {
     color: var(--text-secondary);
     font-size: 14px;
 }
-
 @media (max-width: 900px) {
     .class-summary-grid {
         grid-template-columns: 1fr;
     }
-
     .teacher-month-card-admin {
         max-width: 100%;
     }
 }
-
 @media (max-width: 640px) {
     .teacher-month-card-admin {
         flex-direction: column;
         align-items: flex-start;
     }
 }
-
 .teacher-dashboard-grid {
     display: grid;
     gap: 28px;
     max-width: 1000px;
 }
-
 .attendance-summary {
     display: flex;
     gap: 24px;
 }
-
 .attendance-summary div {
     flex: 1;
     background: var(--bg-secondary);
@@ -179,42 +148,34 @@
     border-radius: 16px;
     padding: 20px;
 }
-
 .attendance-summary h3 {
     font-size: 34px;
     color: var(--accent-copper);
 }
-
 .attendance-summary span {
     color: var(--text-secondary);
 }
-
 .recent-lessons-list {
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
-
 .recent-lesson-item {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 18px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 .recent-lesson-item h3 {
     font-size: 17px;
 }
-
 .recent-lesson-item p {
     color: var(--text-secondary);
     font-size: 14px;
 }
-
 .recent-lesson-item a {
     padding: 9px 14px;
     border-radius: 10px;
@@ -223,52 +184,42 @@
     text-decoration: none;
     font-weight: 800;
 }
-/* STUDENT DASHBOARD */
-
 .student-dashboard-grid {
     display: grid;
     gap: 28px;
     max-width: 1000px;
 }
-
 .student-profile-card {
     display: flex;
     align-items: center;
     gap: 22px;
     max-width: 620px;
 }
-
 .student-avatar-big {
     width: 78px;
     height: 78px;
     border-radius: 18px;
     background: var(--accent-gradient);
     color: #1c1c1e;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 30px;
     font-weight: 900;
 }
-
 .student-profile-card h2 {
     font-size: 24px;
     margin-bottom: 4px;
 }
-
 .student-profile-card p {
     color: var(--text-secondary);
     margin-bottom: 10px;
 }
-
 .student-summary-row {
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
 }
-
 .student-summary-row span {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
@@ -277,13 +228,11 @@
     color: var(--text-secondary);
     font-size: 14px;
 }
-
 .notifications-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-
 .notification-item {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
