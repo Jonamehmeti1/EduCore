@@ -70,34 +70,6 @@ Extends `Person`:
 
 ---
 
-## Project Structure
-EduCore/
-│
-├── classes/
-│ ├── Person.php
-│ ├── Student.php
-│ └── Teacher.php
-│
-├── pages/
-│ ├── login.php
-│ ├── home.php
-│ ├── lessons.php
-│ ├── activity.php
-│ ├── grades.php
-│ ├── schedule.php
-│ └── logout.php
-│
-├── includess/
-│ ├── header.php
-│ └── footer.php
-│
-├── interactivity/
-│ └── css/
-│
-└── README.md
-
----
-
 ## Test Accounts
 
 ### Admin
