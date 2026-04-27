@@ -1,9 +1,10 @@
 <?php include __DIR__ . '/../includess/header.php'; ?>
 
 <?php
-// Ndërroje për testim: admin ose teacher
-$role = "teacher";
+// Ndrysho rolin për testim
+$role = "student"; 
 // $role = "admin";
+// $role = "teacher";
 
 $classes = [
     "10A" => [
@@ -25,11 +26,9 @@ $classes = [
 
 function calculateAverage($students) {
     $total = 0;
-
     foreach ($students as $student) {
         $total += $student["grade"];
     }
-
     return round($total / count($students), 2);
 }
 ?>
@@ -44,7 +43,7 @@ function calculateAverage($students) {
         <?php foreach ($classes as $className => $students): ?>
             <div class="class-card">
                 <h2>Class <?= $className ?></h2>
-                <p>Mesatarja e klasës</p>
+                <p>Mesatarja</p>
                 <div class="average"><?= calculateAverage($students) ?></div>
 
                 <button class="learn-btn" onclick="showAdminClass('<?= $className ?>')">
@@ -106,8 +105,7 @@ function calculateAverage($students) {
                 </tr>
 
                 <?php foreach ($students as $index => $student): ?>
-                    <?php $inputId = $className . $index; ?>
-
+                    <?php $id = $className . $index; ?>
                     <tr>
                         <td><?= $student["student"] ?></td>
                         <td><?= $student["subject"] ?></td>
@@ -117,19 +115,14 @@ function calculateAverage($students) {
                                 min="5"
                                 max="10"
                                 value="<?= $student["grade"] ?>"
-                                id="grade<?= $inputId ?>"
+                                id="grade<?= $id ?>"
                                 class="grade-input"
                                 disabled
                             >
                         </td>
                         <td>
-                            <button class="edit-btn" onclick="editGrade('<?= $inputId ?>')">
-                                Edit
-                            </button>
-
-                            <button class="save-btn" onclick="saveGrade('<?= $inputId ?>')">
-                                Save
-                            </button>
+                            <button class="edit-btn" onclick="editGrade('<?= $id ?>')">Edit</button>
+                            <button class="save-btn" onclick="saveGrade('<?= $id ?>')">Save</button>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -137,21 +130,68 @@ function calculateAverage($students) {
         </div>
     <?php endforeach; ?>
 
+<?php elseif ($role == "student"): ?>
+
+    <h1 class="grades-title">Grades - Student</h1>
+
+    <?php
+    $studentName = "Arta Krasniqi";
+
+    $studentGrades = [
+        ["subject" => "Matematike", "teacher" => "Prof. Blerim", "grade" => 9, "status" => "Accepted"],
+        ["subject" => "Programim", "teacher" => "Prof. Arben", "grade" => 8, "status" => "Accepted"],
+        ["subject" => "Anglisht", "teacher" => "Prof. Elira", "grade" => 10, "status" => "Accepted"],
+    ];
+    ?>
+
+    <div class="details-card student-card" style="display:block;">
+        <h2><?= $studentName ?> - My Grades</h2>
+
+        <table>
+            <tr>
+                <th>Lënda</th>
+                <th>Profesori</th>
+                <th>Nota</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+            <?php foreach ($studentGrades as $index => $g): ?>
+                <tr>
+                    <td><?= $g["subject"] ?></td>
+                    <td><?= $g["teacher"] ?></td>
+                    <td><?= $g["grade"] ?></td>
+
+                    <td id="status<?= $index ?>">
+                        <?= $g["status"] ?>
+                    </td>
+
+                    <td>
+                        <button class="reject-btn" onclick="rejectGrade(<?= $index ?>)">
+                            Reject
+                        </button>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+
 <?php endif; ?>
 
 </div>
 
 <script>
 function hideAllTables() {
-    let all = document.querySelectorAll(".details-card");
-    all.forEach(card => card.style.display = "none");
+    document.querySelectorAll(".details-card").forEach(c => c.style.display = "none");
 }
 
+/* ADMIN */
 function showAdminClass(className) {
     hideAllTables();
     document.getElementById("admin" + className).style.display = "block";
 }
 
+/* TEACHER */
 function showTeacherClass(className) {
     hideAllTables();
     document.getElementById("teacher" + className).style.display = "block";
@@ -167,12 +207,20 @@ function saveGrade(id) {
     let input = document.getElementById("grade" + id);
 
     if (input.value === "" || input.value < 5 || input.value > 10) {
-        alert("Nota duhet me qenë prej 5 deri 10!");
+        alert("Nota duhet 5-10!");
         return;
     }
 
     input.disabled = true;
-    alert("Nota u ruajt me sukses!");
+    alert("Saved!");
+}
+
+/* STUDENT */
+function rejectGrade(index) {
+    let status = document.getElementById("status" + index);
+    status.innerText = "Rejected";
+    status.style.color = "#ef4444";
+    status.style.fontWeight = "bold";
 }
 </script>
 

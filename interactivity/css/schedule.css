@@ -1,0 +1,124 @@
+.schedule-container {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 25px;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.schedule-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+.admin-info-card {
+    max-width: 850px;
+    margin: 0 auto 35px;
+    background: #1e1e1e;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.admin-info-card h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.admin-info-card p {
+    color: #9ca3af;
+    font-size: 15px;
+}
+
+.schedule-table-card {
+    background: #1e1e1e;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow-x: auto;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1100px;
+}
+
+.schedule-table th {
+    background: #fe8e26;
+    color: #ffffff;
+    padding: 16px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.schedule-table td {
+    border-bottom: 1px solid #2d2d2d;
+    border-right: 1px solid #2d2d2d;
+    padding: 12px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.schedule-table tr:hover {
+    background: #242424;
+}
+
+.time-cell {
+    font-weight: 700;
+    color: #facc15;
+    white-space: nowrap;
+    background: #181818;
+}
+
+.schedule-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.schedule-input {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #2a2a2a;
+    color: white;
+    outline: none;
+    font-size: 14px;
+}
+
+.schedule-input::placeholder {
+    color: #9ca3af;
+}
+
+.schedule-input:focus {
+    border-color: #fe8e26;
+}
+
+.save-schedule-btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.save-schedule-btn:hover {
+    transform: scale(1.04);
+    opacity: 0.9;
+}
+
+.saved-message {
+    min-height: 18px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+}
