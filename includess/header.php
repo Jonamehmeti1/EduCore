@@ -8,6 +8,17 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 function active($page, $currentPage) {
     return $page === $currentPage ? 'active' : '';
 }
+
+$pageCssMap = [
+    'home.php' => 'dashboard.css',
+    'lessons.php' => 'lessons.css',
+    'grades.php' => 'grades.css',
+    'activity.php' => 'activity.css',
+    'schedule.php' => 'schedule.css',
+    'settings.php' => 'settings.css'
+];
+
+$pageCss = $pageCssMap[$currentPage] ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +26,7 @@ function active($page, $currentPage) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - EduCare</title>
+    <title>EduCare</title>
 
     <script>
         (function () {
@@ -29,10 +40,16 @@ function active($page, $currentPage) {
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="../interactivity/css/style.css">
-    <link rel="stylesheet" href="../interactivity/css/dashboard.css">
+
+    <?php if ($pageCss): ?>
+        <link rel="stylesheet" href="../interactivity/css/<?= $pageCss ?>">
+    <?php endif; ?>
 </head>
+
 <body>
+
 <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
     <div class="hamburger">
         <span></span>
@@ -49,6 +66,7 @@ function active($page, $currentPage) {
         <div class="logo">
             <span class="logo-text">EduCare</span>
         </div>
+
         <nav class="nav-section">
             <div class="nav-label">Main Menu</div>
 
@@ -77,6 +95,7 @@ function active($page, $currentPage) {
                 Orari
             </a>
         </nav>
+
         <nav class="nav-section">
             <div class="nav-label">Account</div>
 
@@ -85,6 +104,7 @@ function active($page, $currentPage) {
                 Settings
             </a>
         </nav>
+
         <div class="sidebar-footer">
             <div class="theme-toggle">
                 <div class="theme-toggle-label">

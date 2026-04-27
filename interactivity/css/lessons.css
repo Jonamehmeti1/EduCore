@@ -1,0 +1,197 @@
+.dashboard-page {
+    width: 100%;
+}
+
+/* FORM (teacher only) */
+.lesson-form-card {
+    max-width: 920px;
+    margin-bottom: 28px;
+}
+
+.lesson-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: 12px;
+}
+
+.lesson-form input {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.lesson-form input:focus {
+    outline: none;
+    border-color: var(--accent-copper);
+}
+
+.lesson-form button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent-gradient);
+    color: #1c1c1e;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.lesson-form button:hover {
+    opacity: 0.9;
+}
+
+/* LESSONS GRID */
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+    gap: 22px;
+    margin-top: 10px;
+}
+
+/* CARD */
+.lesson-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px;
+
+    min-height: 230px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    transition: 0.2s ease;
+}
+
+.lesson-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-copper);
+}
+
+/* TITLE */
+.lesson-card h2 {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* SUBJECT */
+.lesson-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* META INFO */
+.lesson-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.lesson-meta span {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* TEACHER TEXT (admin only) */
+.lesson-card small {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* BUTTON */
+.lesson-btn {
+    margin-top: auto;
+
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+
+    background: var(--accent-gradient);
+    color: #1c1c1e;
+
+    font-weight: 800;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.lesson-btn:hover {
+    transform: scale(1.03);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+    .lessons-grid {
+        grid-template-columns: repeat(2, 280px);
+    }
+
+    .lesson-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .lessons-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lessons-table-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+    max-width: 1050px;
+}
+
+.lessons-table-card h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.lessons-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lessons-table th {
+    text-align: left;
+    padding: 12px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.lessons-table td {
+    padding: 14px 12px;
+    border-top: 1px solid var(--border);
+    font-size: 15px;
+}
+
+.lessons-table tr:hover {
+    background: var(--bg-card-hover);
+}
+
+.lessons-table td:first-child {
+    color: var(--accent-copper);
+    font-weight: 800;
+}
+
+.small-action-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 9px;
+    background: var(--accent-gradient);
+    color: #1c1c1e;
+    font-weight: 800;
+    cursor: pointer;
+}
