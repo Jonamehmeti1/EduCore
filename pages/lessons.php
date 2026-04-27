@@ -5,6 +5,8 @@ $_SESSION['role'] = 'student';
 $role = $_SESSION['role'] ?? 'student';
 ?>
 
+
+
 <div class="dashboard-page">
     <h1 class="page-title">Lessons</h1>
 
