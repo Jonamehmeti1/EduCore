@@ -1,0 +1,235 @@
+/* CONTAINER */
+.grades-container {
+    max-width: 1150px;
+    margin: 60px auto;
+    padding: 25px;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* TITLE */
+.grades-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 45px;
+    font-weight: 700;
+}
+
+/* CARDS WRAPPER */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* SINGLE CARD */
+.class-card {
+    width: 280px;
+    background: #1e1e1e;
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.class-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* CLASS NAME */
+.class-card h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+/* SMALL TEXT */
+.class-card p {
+    color: #9ca3af;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* AVERAGE NUMBER */
+.average {
+    font-size: 42px;
+    font-weight: bold;
+    color: #22c55e;
+    margin: 15px 0 25px;
+}
+
+/* BUTTON */
+.learn-btn {
+    background: linear-gradient(135deg, #fe8e26, #fe8e26);
+    color: white;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+.learn-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* DETAILS CARD */
+.details-card {
+    display: none;
+    max-width: 850px;
+    margin: 55px auto 0;
+    background: #1e1e1e;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: fadeIn 0.4s ease;
+}
+
+/* TITLE DETAILS */
+.details-card h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* TABLE HEADER */
+th {
+    background: #fe8e26;
+    color: white;
+    padding: 14px;
+    font-size: 15px;
+}
+
+/* TABLE DATA */
+td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+/* ROW HOVER */
+tr:hover {
+    background: #2a2a2a;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* per teachers */
+
+.teacher-card {
+    max-width: 950px;
+    margin: 0 auto;
+    background: #1e1e1e;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.teacher-card h2 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.teacher-info {
+    text-align: center;
+    color: #9ca3af;
+    margin-bottom: 25px;
+}
+
+.grade-input {
+    width: 70px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.grade-input:disabled {
+    background: #2d2d2d;
+    color: white;
+}
+
+.grade-input:not(:disabled) {
+    background: white;
+    color: #111;
+}
+
+.edit-btn,
+.save-btn {
+    border: none;
+    padding: 9px 16px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 3px;
+}
+
+.edit-btn {
+    background: #f59e0b;
+}
+
+.save-btn {
+    background: #22c55e;
+}
+
+.edit-btn:hover,
+.save-btn:hover {
+    opacity: 0.85;
+}
+
+.reject-btn {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* hover efekt */
+.reject-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.6);
+}
+
+/* kur klikohet (optional) */
+.reject-btn:active {
+    transform: scale(0.95);
+}
+
+/* button disabled (nëse don ma vonë) */
+.reject-btn.disabled {
+    background: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
