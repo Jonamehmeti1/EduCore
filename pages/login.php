@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-/* RESET DATABASE çdo herë (fix për problem me session) */
 $_SESSION['users_db'] = [
     [
         "email" => "admin@educare.com",
@@ -22,11 +20,8 @@ $_SESSION['users_db'] = [
         "name" => "Student User"
     ]
 ];
-
 $error = "";
 $success = "";
-
-/* LOGIN */
 if (isset($_POST['login_btn'])) {
 
     $email = trim($_POST['email']);
@@ -52,7 +47,6 @@ if (isset($_POST['login_btn'])) {
     $error = "Të dhënat e gabuara ose roli nuk përputhet!";
 }
 
-/* SIGNUP */
 if (isset($_POST['signup_btn'])) {
 
     if (
