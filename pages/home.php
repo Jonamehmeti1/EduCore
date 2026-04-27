@@ -8,8 +8,44 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     exit();
 }
 
+/* OOP Classes */
+require_once __DIR__ . '/../classes/Student.php';
+require_once __DIR__ . '/../classes/Teacher.php';
+
 $role = $_SESSION['role'] ?? 'student';
 $username = $_SESSION['username'] ?? 'User';
+
+$mainStudent = new Student(
+    1,
+    "Jona Mehmeti",
+    "jona@student.com",
+    "10A",
+    4.7
+);
+
+$mainTeacher = new Teacher(
+    1,
+    "Arta Gashi",
+    "arta@educare.com",
+    "Matematikë",
+    true
+);
+
+$teacher2 = new Teacher(
+    2,
+    "Besnik Krasniqi",
+    "besnik@educare.com",
+    "TIK",
+    true
+);
+
+$teacher3 = new Teacher(
+    3,
+    "Drita Berisha",
+    "drita@educare.com",
+    "Anglisht",
+    true
+);
 
 include __DIR__ . '/../includess/header.php';
 ?>
@@ -22,23 +58,35 @@ include __DIR__ . '/../includess/header.php';
 
     <?php
     $teacherOfMonth = [
-        "name" => "Arta Gashi",
-        "subject" => "Matematikë",
+        "name" => $mainTeacher->getName(),
+        "subject" => $mainTeacher->getSubject(),
         "lessons" => 18,
         "rating" => 4.9,
         "initials" => "AG"
     ];
 
     $activeTeachers = [
-        ["name" => "Arta Gashi", "subject" => "Matematikë", "status" => "Active"],
-        ["name" => "Besnik Krasniqi", "subject" => "TIK", "status" => "Active"],
-        ["name" => "Drita Berisha", "subject" => "Anglisht", "status" => "Active"]
+        [
+            "name" => $mainTeacher->getName(),
+            "subject" => $mainTeacher->getSubject(),
+            "status" => $mainTeacher->getIsActive() ? "Active" : "Inactive"
+        ],
+        [
+            "name" => $teacher2->getName(),
+            "subject" => $teacher2->getSubject(),
+            "status" => $teacher2->getIsActive() ? "Active" : "Inactive"
+        ],
+        [
+            "name" => $teacher3->getName(),
+            "subject" => $teacher3->getSubject(),
+            "status" => $teacher3->getIsActive() ? "Active" : "Inactive"
+        ]
     ];
 
     $classes = [
-        ["class" => "10A", "students" => 28, "teacher" => "Arta Gashi"],
-        ["class" => "10B", "students" => 25, "teacher" => "Besnik Krasniqi"],
-        ["class" => "11A", "students" => 30, "teacher" => "Drita Berisha"]
+        ["class" => "10A", "students" => 28, "teacher" => $mainTeacher->getName()],
+        ["class" => "10B", "students" => 25, "teacher" => $teacher2->getName()],
+        ["class" => "11A", "students" => 30, "teacher" => $teacher3->getName()]
     ];
     ?>
 
@@ -80,7 +128,11 @@ include __DIR__ . '/../includess/header.php';
                             <td><?= $index + 1 ?></td>
                             <td><?= htmlspecialchars($teacher["name"]) ?></td>
                             <td><?= htmlspecialchars($teacher["subject"]) ?></td>
-                            <td><span class="status present"><?= htmlspecialchars($teacher["status"]) ?></span></td>
+                            <td>
+                                <span class="status present">
+                                    <?= htmlspecialchars($teacher["status"]) ?>
+                                </span>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -118,9 +170,9 @@ include __DIR__ . '/../includess/header.php';
     ];
 
     $todaySchedule = [
-        ["time" => "09:00", "class" => "10A", "subject" => "Matematikë"],
-        ["time" => "10:30", "class" => "10B", "subject" => "Matematikë"],
-        ["time" => "12:00", "class" => "11A", "subject" => "Matematikë"]
+        ["time" => "09:00", "class" => "10A", "subject" => $mainTeacher->getSubject()],
+        ["time" => "10:30", "class" => "10B", "subject" => $mainTeacher->getSubject()],
+        ["time" => "12:00", "class" => "11A", "subject" => $mainTeacher->getSubject()]
     ];
 
     $attendanceToday = [
@@ -136,6 +188,11 @@ include __DIR__ . '/../includess/header.php';
     ?>
 
     <div class="teacher-dashboard-grid">
+
+        <div class="admin-card">
+            <h2>Teacher Profile</h2>
+            <p><?= htmlspecialchars($mainTeacher->getTeacherInfo()) ?></p>
+        </div>
 
         <div class="admin-card">
             <h2>My Classes</h2>
@@ -220,9 +277,9 @@ include __DIR__ . '/../includess/header.php';
 
     <?php
     $studentInfo = [
-        "name" => "Jona Mehmeti",
-        "class" => "10A",
-        "average" => 4.7,
+        "name" => $mainStudent->getName(),
+        "class" => $mainStudent->getGrade(),
+        "average" => $mainStudent->getAverage(),
         "attendance" => 91
     ];
 
@@ -257,9 +314,11 @@ include __DIR__ . '/../includess/header.php';
                 <p>Class <?= htmlspecialchars($studentInfo["class"]) ?></p>
 
                 <div class="student-summary-row">
-                    <span>Average: <?= $studentInfo["average"] ?></span>
-                    <span>Attendance: <?= $studentInfo["attendance"] ?>%</span>
+                    <span>Average: <?= htmlspecialchars($studentInfo["average"]) ?></span>
+                    <span>Attendance: <?= htmlspecialchars($studentInfo["attendance"]) ?>%</span>
                 </div>
+
+                <small><?= htmlspecialchars($mainStudent->getStudentInfo()) ?></small>
             </div>
         </div>
 
@@ -326,6 +385,7 @@ include __DIR__ . '/../includess/header.php';
     </div>
 
 </div>
+
 <?php else: ?>
 
 <h1 class="page-title">No Access</h1>

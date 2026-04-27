@@ -46,29 +46,6 @@ if (isset($_POST['login_btn'])) {
 
     $error = "Të dhënat e gabuara ose roli nuk përputhet!";
 }
-
-if (isset($_POST['signup_btn'])) {
-
-    if (
-        !empty($_POST['fullname']) &&
-        !empty($_POST['email']) &&
-        !empty($_POST['password']) &&
-        !empty($_POST['role'])
-    ) {
-
-        $_SESSION['users_db'][] = [
-            "email" => trim($_POST['email']),
-            "password" => trim($_POST['password']),
-            "role" => trim($_POST['role']),
-            "name" => trim($_POST['fullname'])
-        ];
-
-        $success = "Llogaria u krijua! Mund të kyçeni tani.";
-
-    } else {
-        $error = "Plotëso të gjitha fushat për signup!";
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -127,7 +104,6 @@ if (isset($_POST['signup_btn'])) {
 
             <div class="auth-actions">
                 <button type="submit" name="login_btn" class="btn-primary">Login</button>
-                <button type="submit" name="signup_btn" class="btn-secondary">Krijo Llogari</button>
             </div>
 
         </form>
