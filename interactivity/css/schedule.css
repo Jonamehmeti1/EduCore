@@ -13,8 +13,9 @@
     margin-bottom: 35px;
 }
 
-.admin-info-card {
-    max-width: 850px;
+.admin-info-card,
+.teacher-info-card {
+    max-width: 800px;
     margin: 0 auto 35px;
     background: #1e1e1e;
     border-radius: 18px;
@@ -23,13 +24,14 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.45);
 }
 
-.admin-info-card h2 {
+.admin-info-card h2,
+.teacher-info-card h2 {
     font-size: 28px;
     margin-bottom: 8px;
-    color: #ffffff;
 }
 
-.admin-info-card p {
+.admin-info-card p,
+.teacher-info-card p {
     color: #9ca3af;
     font-size: 15px;
 }
@@ -42,26 +44,35 @@
     overflow-x: auto;
 }
 
+.teacher-schedule-card {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 1100px;
+    min-width: 1000px;
+}
+
+.teacher-schedule-table {
+    min-width: 700px;
 }
 
 .schedule-table th {
     background: #fe8e26;
-    color: #ffffff;
+    color: white;
     padding: 16px;
     font-size: 15px;
     text-align: center;
 }
 
 .schedule-table td {
+    padding: 14px;
     border-bottom: 1px solid #2d2d2d;
     border-right: 1px solid #2d2d2d;
-    padding: 12px;
-    vertical-align: top;
     text-align: center;
+    vertical-align: top;
 }
 
 .schedule-table tr:hover {
@@ -69,7 +80,7 @@
 }
 
 .time-cell {
-    font-weight: 700;
+    font-weight: bold;
     color: #facc15;
     white-space: nowrap;
     background: #181818;
@@ -112,7 +123,7 @@
 }
 
 .save-schedule-btn:hover {
-    transform: scale(1.04);
+    transform: scale(1.05);
     opacity: 0.9;
 }
 
@@ -121,4 +132,35 @@
     font-size: 13px;
     font-weight: 600;
     margin: 0;
+}
+
+.teacher-schedule-table td:nth-child(3) {
+    font-weight: 600;
+}
+
+.teacher-schedule-table td:nth-child(4) {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.student-lecture {
+    background: #2a2a2a;
+    border-left: 4px solid #fe8e26;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.student-lecture strong {
+    color: #facc15;
+}
+
+.student-lecture span {
+    color: #9ca3af;
+}
+
+.no-lecture {
+    color: #9ca3af;
+    font-style: italic;
 }
