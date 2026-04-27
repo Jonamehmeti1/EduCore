@@ -1,11 +1,19 @@
-<?php include __DIR__ . '/../includess/header.php'; ?>
-
 <?php
-// Ndryshoje për testim
-$role = "teacher";
-// $role = "admin";
-// $role = "student";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: login.php");
+    exit();
+}
+
+$role = $_SESSION['role'] ?? 'student';
+$username = $_SESSION['username'] ?? 'User';
+
+include __DIR__ . '/../includess/header.php';
+?>
+<?php
 $teacherName = "Prof. Blerim";
 $studentClass = "10A";
 

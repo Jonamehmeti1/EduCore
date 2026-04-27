@@ -1,9 +1,17 @@
 <?php
-include __DIR__ . '/../includess/header.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-$_SESSION['role'] = 'admin';
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: login.php");
+    exit();
+}
 
 $role = $_SESSION['role'] ?? 'student';
+$username = $_SESSION['username'] ?? 'User';
+
+include __DIR__ . '/../includess/header.php';
 ?>
 
 <?php if ($role === 'admin'): ?>

@@ -96,14 +96,7 @@ $pageCss = $pageCssMap[$currentPage] ?? null;
             </a>
         </nav>
 
-        <nav class="nav-section">
-            <div class="nav-label">Account</div>
-
-            <a href="settings.php" class="nav-item <?= active('settings.php', $currentPage) ?>">
-                <i class="fa-solid fa-sliders nav-icon"></i>
-                Settings
-            </a>
-        </nav>
+      
 
         <div class="sidebar-footer">
             <div class="theme-toggle">
